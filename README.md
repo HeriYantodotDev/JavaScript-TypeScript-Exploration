@@ -18,12 +18,17 @@ The repository's directory structure is designed to facilitate comprehensive lea
 
 (TODO: Fix this Directory Structure)
 
+# Table Of Content
+- [README.md](./README.md)
+- [basics](./basics/)
+  - [javascript-engine](./basics/javascript-engine.md)
+
 # Getting Started
 To make the most of this repository and deepen your understanding of JavaScript, follow these steps:
 
 - Clone the repository to your local machine using the following command:
   `git clone https://github.com/HeriYantodotDev/JavaScript-TypeScript-Exploration.git`
-- Explore the directories within the topics/ folder to find specific JavaScript concepts you want to learn. Each subdirectory contains a README.md file that introduces the topic and provides code examples written in TypeScript.
+- Explore the directories within the topics/ folder to find specific JavaScript concepts you want to learn.
 - Read the README.md file in each directory to gain insights into the JavaScript concept, understand its underlying principles, and study the accompanying TypeScript code examples.
 - To run the TypeScript code examples, you can follow these steps:
   - Install TypeScript globally on your machine using the command: `npm install -g typescript`. 
