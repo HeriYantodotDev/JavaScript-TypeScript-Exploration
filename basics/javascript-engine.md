@@ -87,4 +87,4 @@ Other things that we have to consider is:
 2.  Hidden Classes
     Here's the example : [hiddenClasses.ts](./hiddenClasses.ts)
 
-We should write codes that are predictable not only for humans but also for the machines. =
+We should write codes that are predictable not only for humans but also optimal for the machines.
