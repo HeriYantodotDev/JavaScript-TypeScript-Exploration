@@ -22,6 +22,8 @@ The repository's directory structure is designed to facilitate comprehensive lea
 - [README.md](./README.md)
 - [basics](./basics/)
   - [javascript-engine](./basics/javascript-engine.md)
+  - [call-stack-memory-head](./basics/call-stack-memory-heap.md)
+  - [single-threaded](./basics/single-threaded.md)
 
 # Getting Started
 To make the most of this repository and deepen your understanding of JavaScript, follow these steps:
