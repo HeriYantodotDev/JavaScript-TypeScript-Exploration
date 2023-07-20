@@ -1,6 +1,7 @@
+/* eslint-disable no-console */
 function multiply(a: number, b: number): number {
   console.log('This is multiply');
-  return a * b
+  return a * b;
 }
 
 function square(n: number): number {
@@ -9,7 +10,7 @@ function square(n: number): number {
 }
 
 function printSquare(x: number): number{
-  console.log('This is printSquare')
+  console.log('This is printSquare');
   return square(x);
 }
 

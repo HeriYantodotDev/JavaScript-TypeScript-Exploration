@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // inline caching
 
 interface Product {
@@ -6,13 +7,13 @@ interface Product {
 }
 
 function findProduct(product: Product) {
-  return `found ${product.id} ${product.name}`
+  return `found ${product.id} ${product.name}`;
 }
 
 const productData: Product = {
   id: 5,
-  name: 'Dongle X'
-}
+  name: 'Dongle X',
+};
 
 console.log(findProduct(productData));
 

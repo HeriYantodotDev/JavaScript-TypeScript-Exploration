@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const object1 = {
   name: 'Jenny',
   age: 39,
@@ -8,7 +9,7 @@ const object2 = object1;
 const object3 = {
   name: 'Jenny',
   age: 39,
-}
+};
 
 //checking whether they are the same objects or not
 

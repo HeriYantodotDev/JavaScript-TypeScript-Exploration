@@ -58,7 +58,7 @@ obj3 --> │   Object: {        │
 ```
 If you found that this is not very clear the best way to understand is through the code: 
 
-( You can run the code and see how it works here: [memoryHeap.ts](./memoryHeap.ts) )
+( You can run the code and see how it works here: [memoryHeap.ts](../sampleCode/src/basics/memoryHeap.ts) )
 
 ```
 const object1 = {
@@ -98,7 +98,7 @@ In JavaScript, the call stack is a data structure that keeps track of the execut
 The call stack is used to manage the flow of execution in a program. Whenever a function is called, a new frame representing that function's execution context is created and pushed onto the call stack. This frame contains information such as function arguments, local variables, and the return address, which determines where the program should continue after the function completes.
 
 Let's consider an example to illustrate the call stack in JavaScript:
-[callStack.ts](./callStack.ts)
+[callStack.ts](../sampleCode/src/basics/callStack.ts)
 
 ```
 function multiply(a: number, b: number): number {
@@ -201,4 +201,76 @@ Now let's break it down, however I'm going to draw it upside-down so it's really
   ```
   empty
   ```
-- 
+
+
+# Stack OverFlow
+
+A stack overflow occurs when the call stack exceeds its maximum size. This can happen due to excessive function recursion or deeply nested function calls that consume more stack space than is available. When a stack overflow occurs, it means that the call stack has become too large, and the browser or JavaScript engine can't allocate more memory for the call stack, resulting in a runtime error.
+
+Take a look at this function : 
+```
+function recursiveFunction() {
+  recursiveFunction(); // This call to itself will cause the stack to grow indefinitely
+}
+
+recursiveFunction();
+
+```
+In the example above, the recursiveFunction calls itself without any termination condition, leading to an infinite loop of function calls. As a result, the call stack will keep growing until it reaches its maximum size, at which point a "Maximum call stack size exceeded" error, commonly known as a stack overflow error, will be thrown.
+
+To avoid stack overflow errors, it's essential to ensure that recursive functions have proper termination conditions, limiting the number of recursive calls and avoiding deep nesting of functions whenever possible. If you encounter a stack overflow error, it usually indicates a flaw in the logic of your code, and you should review your recursive functions or function calls to identify and fix the issue.
+
+# Garbage Collection
+
+In JavaScript, being a "garbage collected language" means that it has an automatic memory management system that handles the allocation and deallocation of memory for objects in your code. This feature allows developers to focus on writing code without explicitly managing memory, making it easier to work with compared to languages that require manual memory management.
+
+Being a garbage collected language provides several advantages, including:
+
+- Ease of Use: Developers don't need to manually allocate and deallocate memory for objects, reducing the likelihood of memory-related bugs and making it easier to write code.
+- Preventing Memory Leaks: The garbage collector automatically identifies and removes unreachable objects, preventing memory leaks and ensuring efficient memory usage.
+
+However, it's essential to note that garbage collection is not entirely without overhead. The process of garbage collection itself consumes some computational resources, and there can be occasional pauses in the program's execution when the garbage collector runs. Modern JavaScript engines use sophisticated algorithms to optimize garbage collection and minimize its impact on performance.
+
+Overall, the garbage collection mechanism in JavaScript is a significant advantage, allowing developers to focus on building applications without having to worry about low-level memory management.
+
+# Memory Leaks
+
+[memoryLeaks.ts](../sampleCode/src/basics/memoryLeaks.ts)
+
+If you run this code on NodeJS: 
+
+```
+const list = [];
+
+for (let i=1; i > 0; i ++) {
+  list.push(i);
+}
+```
+
+You'll get this error : 
+```
+#
+# Fatal error in , line 0
+# Fatal JavaScript invalid size error 169220804
+#
+#
+#
+#FailureMessage Object: 0x7ffe1343ea40
+ 1: 0xbe67b1  [node]
+ 2: 0x1e4d6a4 V8_Fatal(char const*, ...) [node]
+ 3: 0xf00158  [node]
+ 4: 0x10af622  [node]
+ 5: 0x10af8e2  [node]
+ 6: 0x12beb8b v8::internal::Runtime_GrowArrayElements(int, unsigned long*, v8::internal::Isolate*) [node]
+ 7: 0x16fb6f9  [node]
+Trace/breakpoint trap
+```
+
+Basically, in the code above we fill in the memory with unlimited data and the garbage collection is not yet working since we're still using the variable. 
+
+There are three common memory leaks: 
+- Global Variables
+- Event Listeners
+- `setInterval` function
+
+Remember: Memory is limited. We have to be conscious of the resources that we use. 

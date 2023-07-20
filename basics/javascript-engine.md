@@ -83,8 +83,8 @@ Be careful when using these keywords:
 
 Other things that we have to consider is: 
 1.  Inline Caching
-    Here's the example : [inclineCaching.ts](./inlineCaching.ts)
+    Here's the example : [inclineCaching.ts](../sampleCode/src/basics/inlineCaching.ts)
 2.  Hidden Classes
-    Here's the example : [hiddenClasses.ts](./hiddenClasses.ts)
+    Here's the example : [hiddenClasses.ts](../sampleCode//src//basics/hiddenClasses.ts)
 
 We should write codes that are predictable not only for humans but also optimal for the machines.
